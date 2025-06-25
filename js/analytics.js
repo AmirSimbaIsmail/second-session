@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
             pushToDataLayer('navigation_click', {
                 link_id: this.id,
                 link_text: this.textContent,
-                link_url: this.href
+                link_url: this.href,
+                position: Array.from(document.querySelectorAll('nav a')).indexOf(this) + 1
             });
         });
     });
@@ -57,6 +58,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
+
+
+
 
 // Example of how to access dataLayer data
 window.showDataLayerHistory = function() {
